@@ -1,0 +1,18 @@
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.time.Duration;
+public class BaseTest {
+
+    ChromeDriver driver;
+
+    public ChromeDriver openBrowser(){
+
+        driver.manage().window().minimize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://demoblaze.com/");
+        return driver;
+    }
+
+
+
+}
